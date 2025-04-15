@@ -1,0 +1,20 @@
+.warehouse-container {
+  background: linear-gradient(120deg, #f0f0f0, #e3f2fd);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.animated-heading {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animated-button {
+  transition: transform 0.2s;
+}
+.animated-button:hover {
+  transform: scale(1.05);
+}
+
+.animated-item {
+  animation: fadeInUp 0.5s ease-in-out;
+}

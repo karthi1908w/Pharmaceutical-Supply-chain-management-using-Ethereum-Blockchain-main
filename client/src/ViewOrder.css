@@ -1,0 +1,140 @@
+/* ViewOrder.css */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .order-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .order-id {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .status {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .status.pending {
+    background-color: #ffcc00;
+    color: #000;
+  }
+  
+  .status.completed {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .status.cancelled {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .customer-details, .order-details {
+    margin-top: 10px;
+  }
+  
+  .customer-details h3, .order-details h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .order-item {
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+  
+  .order-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .process-order {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .process-order:hover {
+    background-color: #0056b3;
+  }
+  
+  .no-orders {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination-btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
