@@ -15,7 +15,7 @@ const { Server } = require("socket.io");
 const orderRoutes = require("./routes/order");
 const OrderModel = require("./models/order"); 
 const Invoice = require("./models/invoice"); 
-const Salesreport = require("./routes/Sales");  
+
 const CustomerModel = require("../backend/models/customer");
 
 const OrderUpdate = require('./models/OrderUpdate'); 
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api/sales",Salesreport);
+
 
 mongoose
   .connect(process.env.MONGO_URI)
