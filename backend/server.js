@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-
 const customerRoutes = require("./routes/customer");
 const app = express();
 const http = require("http");
