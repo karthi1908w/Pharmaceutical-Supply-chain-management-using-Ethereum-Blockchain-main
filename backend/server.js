@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const Web3 = require("web3");
 const customerRoutes = require("./routes/customer");
 const app = express();
 const http = require("http");
@@ -40,9 +39,7 @@ mongoose
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
 
-const web3 = new Web3(new Web3.providers.HttpProvider(process.env.INFURA_URL));
-const contractABI = [ /* Your Contract ABI Here */ ];
-const contract = new web3.eth.Contract(contractABI, process.env.CONTRACT_ADDRESS);
+
 
 const uploadPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath);
