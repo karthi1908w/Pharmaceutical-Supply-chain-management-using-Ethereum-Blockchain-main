@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const Web3 = require("web3");
 const customerRoutes = require("./routes/customer");
 const app = express();
 const http = require("http");
@@ -14,7 +15,7 @@ const { Server } = require("socket.io");
 const orderRoutes = require("./routes/order");
 const OrderModel = require("./models/order"); 
 const Invoice = require("./models/invoice"); 
-
+const Salesreport = require("./routes/Sales");  
 const CustomerModel = require("../backend/models/customer");
 
 const OrderUpdate = require('./models/OrderUpdate'); 
@@ -24,10 +25,14 @@ const io = new Server(server, {
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "pharmaceutical-supply-chain-management-using-ethereu-6akn7w1i0.vercel.app", // ✅ frontend domain
+  credentials: true
+}));
+
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
-
+app.use("/api/sales", Salesreport);
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -35,7 +40,9 @@ mongoose
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
 
-
+const web3 = new Web3(new Web3.providers.HttpProvider(process.env.INFURA_URL));
+const contractABI = [ /* Your Contract ABI Here */ ];
+const contract = new web3.eth.Contract(contractABI, process.env.CONTRACT_ADDRESS);
 
 const uploadPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath);
@@ -1305,9 +1312,6 @@ app.post("/api/login", async (req, res) => {
     console.error("Error during login:", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
-});
-app.get('/', (req, res) => {
-  res.send('Backend is up and running 🚀');
 });
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
