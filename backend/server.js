@@ -24,7 +24,9 @@ const io = new Server(server, {
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(origin: "https://pharmaceutical-supply-chain-management-using-ethereu-j7q5r5ppy.vercel.app", 
+  credentials: true
+            ));
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
 
