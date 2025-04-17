@@ -25,7 +25,7 @@ const io = new Server(server, {
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://pharmaceutical-supply-chain-madhaneshs-projects.vercel.app/", // ✅ frontend domain
+  origin: "", // ✅ frontend domain
   credentials: true
 }));
 
