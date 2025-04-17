@@ -33,7 +33,7 @@ const Distributor = () => {
 
   const fetchDistributor = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/distributor/profile?userID=${userID}`);
+      const res = await axios.get(`https://pharma-backend-z97z.onrender.com/distributor/profile?userID=${userID}`);
       setDistributor(res.data);
     } catch (err) {
       console.error("Error fetching distributor details:", err);
@@ -45,7 +45,7 @@ const Distributor = () => {
 
   const fetchMedicines = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/medicines"); 
+      const res = await axios.get("https://pharma-backend-z97z.onrender.com/medicines"); 
       console.log("Fetched Medicines:", res.data); 
       if (Array.isArray(res.data)) {
         setMedicines(res.data);
@@ -69,7 +69,7 @@ const Distributor = () => {
       }
 
      
-      const response = await axios.get("http://localhost:5000/api/profile", {
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/profile", {
         headers: { Authorization: `Bearer ${token}` }, 
       });
 
