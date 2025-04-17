@@ -99,7 +99,7 @@ const Customer = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5000/api/users", {
+      const response = await axios.get("https://pharmaceutical-supply-chain-management.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
