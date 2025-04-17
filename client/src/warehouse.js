@@ -43,7 +43,7 @@ const Warehouse = () => {
   const fetchWarehouseData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/orders");
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/orders");
       const extractedMedicines = response.data.flatMap(order =>
         order.orderDetails.map(med => ({
           name: med.name,
