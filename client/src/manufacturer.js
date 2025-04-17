@@ -39,7 +39,7 @@ const Manufacturer = () => {
 
   const fetchManufacturer = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/manufacturer/profile?userID=${userID}`);
+      const res = await axios.get(`https://pharma-backend-z97z.onrender.com/manufacturer/profile?userID=${userID}`);
       setManufacturer(res.data);
     } catch (err) {
       console.error("Error fetching manufacturer:", err);
@@ -50,7 +50,7 @@ const Manufacturer = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get("http://localhost:5000/manufacturer/view-medicines");
+      const res = await axios.get("https://pharma-backend-z97z.onrender.com/manufacturer/view-medicines");
       setMedicines(res.data);
     } catch (err) {
       console.error("API Fetch Error:", err.response?.data || err.message);
@@ -69,7 +69,7 @@ const Manufacturer = () => {
       }
 
       
-      const response = await axios.get("http://localhost:5000/api/profile", {
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/profile", {
         headers: { Authorization: `Bearer ${token}` }, 
       });
 
