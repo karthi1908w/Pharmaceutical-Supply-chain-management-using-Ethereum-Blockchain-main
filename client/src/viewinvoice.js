@@ -19,7 +19,7 @@ const ViewInvoice = () => {
 
   const fetchInvoices = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/invoices"); 
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/invoices"); 
       if (response.status === 200) {
         setInvoices(response.data); 
       } else {
