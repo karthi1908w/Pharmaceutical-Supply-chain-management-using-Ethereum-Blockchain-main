@@ -14,7 +14,7 @@ const { Server } = require("socket.io");
 const orderRoutes = require("./routes/order");
 const OrderModel = require("./models/order"); 
 const Invoice = require("./models/invoice"); 
- 
+ const serverless = require("serverless-http");
 const CustomerModel = require("../backend/models/customer");
 
 const OrderUpdate = require('./models/OrderUpdate'); 
@@ -1320,5 +1320,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
 module.exports = app;
-module.exports.handler = require("serverless-http")(app);
+module.exports.handler = serverless(app);
 
