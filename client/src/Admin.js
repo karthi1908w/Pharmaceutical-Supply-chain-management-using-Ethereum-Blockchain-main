@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://pharmaceutical-supply-chain-management.onrender.com";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
