@@ -11,7 +11,7 @@ const TrackOrder = ({ customerId }) => {
     console.log("Customer ID:", customerId);
     const fetchCustomerOrders = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/orderupdates/customer/${customerId}`);
+        const response = await axios.get(`https://pharma-backend-z97z.onrender.com/api/orderupdates/customer/${customerId}`);
         setOrders(response.data);
         setError(null);
       } catch (error) {
