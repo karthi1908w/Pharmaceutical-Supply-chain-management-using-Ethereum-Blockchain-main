@@ -10,7 +10,7 @@ const OrderUpdates = () => {
   useEffect(() => {
     const fetchOrderUpdates = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orderupdates");
+        const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/orderupdates");
         setOrderUpdates(response.data);
       } catch (error) {
         console.error("Error fetching order updates:", error);
@@ -26,7 +26,7 @@ const OrderUpdates = () => {
   const handleShipOrder = async (orderId) => {
     console.log("Shipping order with ID:", orderId); 
     try {
-      const response = await axios.put(`http://localhost:5000/api/orders/ship/${orderId}`);
+      const response = await axios.put(`https://pharma-backend-z97z.onrender.com//api/orders/ship/${orderId}`);
       const updatedOrder = response.data;
       setOrderUpdates((prevUpdates) =>
         prevUpdates.map((update) =>
