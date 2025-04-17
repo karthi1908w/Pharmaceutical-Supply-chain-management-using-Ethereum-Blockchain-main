@@ -1313,7 +1313,7 @@ app.post("/api/login", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.get("/hello", (req, res) => {
+app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Vercel Backend!" });
 });
 
