@@ -81,7 +81,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/login", { name, password, userID });
+      const res = await axios.post("https://pharma-backend-z97z.onrender.com/login", { name, password, userID });
       localStorage.setItem("authToken", res.data.token);
       localStorage.setItem("userID", res.data._id);
       localStorage.setItem("userRole", res.data.role);
