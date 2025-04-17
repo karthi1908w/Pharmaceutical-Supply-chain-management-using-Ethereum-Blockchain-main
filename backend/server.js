@@ -22,7 +22,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: "*" }, 
 });
-const MONGO_URI = "mongodb+srv://madhaneshwaranmadhan:1234@cluster0.hg8ai.mongodb.net/";
+const MONGO_URI = "mongodb+srv://madhaneshwaranmadhan:1234@cluster0.hg8ai.mongodb.net/test?retryWrites=true&w=majority";
 app.use(express.json());
 app.use(cors({
   origin: "", // ✅ frontend domain
