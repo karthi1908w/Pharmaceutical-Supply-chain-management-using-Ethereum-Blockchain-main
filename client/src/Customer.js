@@ -99,7 +99,7 @@ const Customer = () => {
         return;
       }
 
-      const response = await axios.get("https://pharmaceutical-supply-chain-management.onrender.com/api/users", {
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -123,7 +123,7 @@ const Customer = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5000/api/customer/profile", {
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/customer/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -142,7 +142,7 @@ const Customer = () => {
   
   const fetchUserOrders = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/orders"); 
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/orders"); 
       if (response.status === 200) {
         const filteredOrders = response.data.filter(
           (order) => order.customerDetails?.name === profileData.username 
@@ -194,7 +194,7 @@ const Customer = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get("http://localhost:5000/customer/view-medicines");
+        const res = await axios.get("https://pharma-backend-z97z.onrender.com/customer/view-medicines");
         setMedicines(res.data);
       } catch (err) {
         console.error("API Fetch Error:", err);
@@ -286,7 +286,7 @@ const Customer = () => {
     console.log("Attempting to save order:", orderData);
 
     try {
-      const response = await fetch('http://localhost:5000/api/orders', {  
+      const response = await fetch('https://pharma-backend-z97z.onrender.com/api/orders', {  
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -331,7 +331,7 @@ const Customer = () => {
 
   const fetchInvoices = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/invoices"); 
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/invoices"); 
       if (response.status === 200) {
         setInvoices(response.data); 
       } else {
