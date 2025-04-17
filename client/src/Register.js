@@ -32,7 +32,7 @@ function Register() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/register", formData, {
+      const res = await axios.post("https://pharma-backend-z97z.onrender.com/register", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
