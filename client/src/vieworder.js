@@ -14,7 +14,7 @@ const ViewOrder = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orders");
+        const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/orders");
         console.log("Fetched orders:", response.data);
 
         
