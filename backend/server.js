@@ -22,7 +22,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: "*" }, 
 });
-const MONGO_URI = "mongodb+srv://madhaneshwaranmadhan:1234@cluster0.hg8ai.mongodb.net/test?retryWrites=true&w=majority";
+
 app.use(express.json());
 app.use(cors({
   origin: "", // ✅ frontend domain
@@ -33,16 +33,10 @@ app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
 
 
-
 mongoose
-  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
-
-
-
-
-
+  .catch((err) => console.error("❌ MongoDB Error:", err));
 
 const uploadPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath);
