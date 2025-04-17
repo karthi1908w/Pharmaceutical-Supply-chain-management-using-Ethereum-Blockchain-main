@@ -15,7 +15,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/orders"); 
+        const response = await fetch("https://pharma-backend-z97z.onrender.com/api/orders"); 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -34,7 +34,7 @@ const Orders = () => {
   const fetchCustomers = async () => {
     console.log("Send button clicked! Fetching customers...");
     try {
-      const response = await fetch("http://localhost:5000/api/users"); 
+      const response = await fetch("https://pharma-backend-z97z.onrender.com/api/users"); 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -72,7 +72,7 @@ const Orders = () => {
 
       console.log("Invoice Data:", invoiceData);
 
-      const response = await fetch("http://localhost:5000/api/invoices", {
+      const response = await fetch("https://pharma-backend-z97z.onrender.com/api/invoices", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
