@@ -25,7 +25,7 @@ const io = new Server(server, {
 
 app.use(express.json());
 app.use(cors({
-  origin: "pharmaceutical-supply-chain-management-using-ethereu-6akn7w1i0.vercel.app", // ✅ frontend domain
+  origin: "https://pharmaceutical-supply-chain-management-using-ethereu-6akn7w1i0.vercel.app", // ✅ frontend domain
   credentials: true
 }));
 
