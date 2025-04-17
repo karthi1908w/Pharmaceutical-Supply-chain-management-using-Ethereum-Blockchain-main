@@ -1313,8 +1313,8 @@ app.post("/api/login", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from Vercel Backend!" });
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
 });
 
 const PORT = process.env.PORT || 5000;
