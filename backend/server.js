@@ -40,6 +40,8 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Error:", err));
+console.log("📦 MONGO_URI from env:", process.env.MONGO_URI);
+
 
 
 
