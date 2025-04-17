@@ -32,6 +32,9 @@ app.use(cors({
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
 
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from Vercel Backend!" });
+});
 
 mongoose
   .connect(process.env.MONGO_URI)
