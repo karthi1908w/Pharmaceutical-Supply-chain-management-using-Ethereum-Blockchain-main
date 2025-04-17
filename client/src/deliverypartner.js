@@ -43,7 +43,7 @@ const DeliveryPartner = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orderupdates"); 
+        const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/orderupdates"); 
         console.log("Fetched Orders:", response.data); 
         setOrders(response.data);
       } catch (error) {
@@ -65,13 +65,13 @@ const DeliveryPartner = () => {
 
   const handleSetDelivery = async (orderId) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/orders/set-delivery/${orderId}`, {
+      const response = await axios.put(`https://pharma-backend-z97z.onrender.com/api/orders/set-delivery/${orderId}`, {
         expectedDelivery, 
       });
       console.log("Delivery date set:", response.data);
 
      
-      const updatedOrders = await axios.get("http://localhost:5000/api/orderupdates");
+      const updatedOrders = await axios.get("https://pharma-backend-z97z.onrender.com/api/orderupdates");
       setOrders(updatedOrders.data);
       console.log("Updated Orders:", updatedOrders.data);
     } catch (error) {
